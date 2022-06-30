@@ -1,5 +1,4 @@
-}
-        package javaa;// package src.main.java;
+package javaa;// package src.main.java;
 
 public class Action {
     enum reaction {
