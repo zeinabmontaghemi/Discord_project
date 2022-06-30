@@ -183,7 +183,7 @@ public class Menu {
 
        
 
-        //String json = gson.toJson(account);
+        String json = gson.toJson(account);
 
         //save json as value in jedis
         accountDB.set(id,json);
