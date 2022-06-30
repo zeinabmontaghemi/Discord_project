@@ -2,8 +2,8 @@
 
 package javaa;
 
-//import com.google.gson.Gson;
-//import redis.clients.jedis.Jedis;
+import com.google.gson.Gson;
+import redis.clients.jedis.Jedis;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -113,7 +113,7 @@ public class Menu {
     public void signUp() throws IOException, InterruptedException { // برای ثبت نام
 
         String id, password, phoneNumber, countryCode, email;
-      //  Jedis accountDB = new Jedis("localhost");
+      Jedis accountDB = new Jedis("localhost");
         while (true) {
             System.out.println("Enter your username");
             id = input.nextLine();
@@ -176,10 +176,10 @@ public class Menu {
 
 
         // convert class account to json
-       // Gson gson = new Gson();
+        Gson gson = new Gson();
         //String json = gson.toJson(account);
         //save json as value in jedis
-        //accountDB.set(id,json);
+        accountDB.set(id,json);
 
     }
 
