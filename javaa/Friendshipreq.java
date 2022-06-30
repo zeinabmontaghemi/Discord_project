@@ -1,4 +1,5 @@
-package javaa;// package src.main.java;
+// package src.main.java;
+package  javaa;
 
 public class Friendshipreq {
     Account sender;

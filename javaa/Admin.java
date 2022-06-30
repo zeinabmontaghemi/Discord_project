@@ -2,12 +2,13 @@ package javaa;
 
 import java.util.ArrayList;
 
+
 public class Admin extends Account{
     // private String serverName;
     // private String createdRoleName;
 
     ArrayList<Account> serverUsers = new ArrayList<Account>();///??we have more than one server ,so we should specify
-                                                              //// server user of which server should be added or delete
+    //// server user of which server should be added or delete
 
 
     // public String getServerName() {
@@ -46,11 +47,11 @@ public class Admin extends Account{
         boolean f = false;
         for(Account serverUser : serverUsers){
             //check if serverUser existed in list or not
-            if(){
-                f=true;
-                serverUsers.remove(serverUser);
-                break;
-            }
+//            if(){
+//                f=true;
+//                serverUsers.remove(serverUser);
+//                break;
+//            }
         }
         return  f;
     }

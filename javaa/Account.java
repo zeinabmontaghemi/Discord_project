@@ -1,25 +1,38 @@
 package javaa;
 
+import com.google.gson.Gson;
+import redis.clients.jedis.Jedis;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Account {
+public class Account implements Serializable {
     private String Id;
     private String Password;
     private String PhoneNumber;
     private String Email;
     private String countryCode;
     private ArrayList<Account> friends = new ArrayList<>();
-    private ArrayList<Serverclass> serverDis = new ArrayList<>();
+    private ArrayList<Serverclass> serverDis = new ArrayList<>(); // uncomment this
+    private ArrayList<Account> friendReq = new ArrayList<>();
+    private UserStatus UserStatus;
 
 
-    enum UserStatus {
+    public enum UserStatus {
         Online,
         Idle,
         Do_Not_Disturb,
         Invisible,
     }
 
-    // public int showServerDis(){
+    public void setUserStatus(UserStatus userStatus) {
+        UserStatus = userStatus;
+    }
+
+    public UserStatus getUserStatus() {
+        return UserStatus;
+    }
+// public int showServerDis(){
     //     if (serverDis.size() == 0){
     //         System.out.println("your server list is empty!");
     //         return -1;
@@ -41,6 +54,22 @@ public class Account {
     //         }
     //     }
     // }
+    public void removeFriendship(Account req){
+        friendReq.remove(req);
+    }
+
+    public ArrayList<Account> getFriendReq() {
+        return friendReq;
+    }
+
+    public  void addServerDis(Serverclass server){
+        serverDis.add(server);
+    }
+
+    public void addFriend(Account friend){
+        friends.add(friend);
+    }
+
     public ArrayList<Serverclass> getServerDis() {
         return serverDis;
     }
@@ -89,11 +118,13 @@ public class Account {
         Email = email;
     }
 
-    public Serverclass addServer(String serverName){
-        Serverclass serverClass = new Serverclass(serverName);
-        serverDis.add(serverClass);
-        return serverClass;
-    }
+
+
+    //    public Serverclass addServer(String serverName){
+//        Serverclass serverClass = new Serverclass(serverName);
+//        serverDis.add(serverClass);
+//        return serverClass;
+//    }
 //    public String toString() {
 //        return "(" + countryCode + ")" + number;
 //}

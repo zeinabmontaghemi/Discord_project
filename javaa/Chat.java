@@ -20,8 +20,8 @@ public class Chat {
 
     void setReaction(Account myAccount){
         Action newAction = new Action();
-        newAction.setAction();
-        reaction.add(myAccount , newAction);
+//        newAction.setAction();
+//        reaction.add(myAccount , newAction); //uncomment this
     }
 
 }

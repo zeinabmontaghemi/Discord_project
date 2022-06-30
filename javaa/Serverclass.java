@@ -1,9 +1,10 @@
 // package src.main.java;
 // package discord.src.java;
 package javaa;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Serverclass {
+public class Serverclass implements Serializable {
     // this is servers in discord
     private String serverName;
     private ArrayList<Admin> admins;
@@ -11,7 +12,7 @@ public class Serverclass {
     private ArrayList<Account> users;
     private ArrayList<Channel> channels;
 
-    Serverclass(String serverName){
+    public Serverclass(String serverName){
         this.serverName = serverName;
         admins = new ArrayList<>();
         users = new ArrayList<>();
@@ -20,6 +21,10 @@ public class Serverclass {
 
     public String getServerName() {
         return serverName;
+    }
+
+    public void addUser(Account user){
+        users.add(user);
     }
 
     // public void createServer(){
@@ -31,5 +36,5 @@ public class Serverclass {
 
     // }
 
-    
+
 }

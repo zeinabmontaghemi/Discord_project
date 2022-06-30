@@ -1,4 +1,5 @@
-package javaa;// package src.main.java;
+}
+        package javaa;// package src.main.java;
 
 public class Action {
     enum reaction {
@@ -6,10 +7,10 @@ public class Action {
     }
     private reaction chosenReaction;
 
-    void setAction(){
-        // tarighe vorudi gereftan? // 
-        chosenReaction = reaction.DISLIKE;
-        chosenReaction = reaction.LIKE;
-        chosenReaction = reaction.LAUGH;
-    }
+//    void setAction(){
+//        // tarighe vorudi gereftan? //
+//        chosenReaction = reaction.DISLIKE;
+//        chosenReaction = reaction.LIKE;
+//        chosenReaction = reaction.LAUGH;
+//    } // uncommebr
 }

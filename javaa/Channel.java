@@ -1,5 +1,5 @@
-package javaa;// package src.main.java;
-
+// package src.main.java;
+package  javaa;
 import java.util.ArrayList;
 
 public class Channel {
